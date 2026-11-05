@@ -1,4 +1,5 @@
-
+# copied from spacetime-crawler similarity.py. 
+# TO DO must edit 
 import re
 import sqlite3
 from threading import RLock
