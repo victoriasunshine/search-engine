@@ -8,7 +8,7 @@ class InvertedIndex:
         self.seen_urls = set()
         self.next_doc_id = 0
 
-    def add_document(self, url,term_counts, important_count=None):
+    def add_document(self, url,term_counts, important_counts=None):
         """give page a doc Id and add one posting per term """
 
         if url in self.seen_urls:
@@ -19,14 +19,14 @@ class InvertedIndex:
         self.next_doc_id += 1
         self.doc_urls[doc_id] = url
 
-        if important_count is None:
-            important_count = {}
+        if important_counts is None:
+            important_counts = {}
 
         # How many times in importnat text
         for term, count in term_counts.items():
             if term not in self.index:
                 self.index[term] = []
-            important = important_count.get(term, 0)
+            important = important_counts.get(term, 0)
             self.index[term].append((doc_id, count, important))
 
         return doc_id
@@ -36,5 +36,12 @@ class InvertedIndex:
         Page IDs increase'''
         self.index = {}
 
+if __name__ == "__main__":
+    idx = InvertedIndex()
 
+    # + two pages
+    idx.add_document("https://a.com", {"cat": 2, "dog": 1})
+    idx.add_document("https://b.com", {"cat": 3})
 
+    print("Pages:", idx.doc_urls)
+    print("Index:", idx.index)
