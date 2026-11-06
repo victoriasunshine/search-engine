@@ -30,3 +30,11 @@ class InvertedIndex:
             self.index[term].append((doc_id, count, important))
 
         return doc_id
+
+    def clear_postings(self):
+        '''Empty the index so new batch of pages can be added,
+        Page IDs increase'''
+        self.index = {}
+
+
+
