@@ -1,8 +1,17 @@
 # alphanumeric tokens + porter stemming
 
+from functools import lru_cache
+
 from nltk.stem import PorterStemmer
 
 stemmer = PorterStemmer()
+
+
+@lru_cache(maxsize=200_000)
+def stem(token):
+    # Cached: the same words repeat across pages, so each is stemmed once.
+    return stemmer.stem(token)
+
 
 
 def tokenize(text):
@@ -23,12 +32,13 @@ def tokenize(text):
     return tokens
 
 
+
 def count_terms(text):
     counts = {}
     tokens = tokenize(text)
 
     for token in tokens:
-        term = stemmer.stem(token)
+        term = stem(token)
 
         if term in counts:
             counts[term] = counts[term] + 1

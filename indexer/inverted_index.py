@@ -36,6 +36,16 @@ class InvertedIndex:
         Page IDs increase'''
         self.index = {}
 
+    def write_partial(self, path):
+            '''Offload the in-memory postings to a partial index file on disk.
+            One line per term, terms sorted so partial files can be merged:
+                term<TAB>doc_id,tf,important_tf doc_id,tf,important_tf ...'''
+            with open(path, "w", encoding="utf-8") as out:
+                for term in sorted(self.index):
+                    postings = " ".join("%d,%d,%d" % p for p in self.index[term])
+                    out.write(term + "\t" + postings + "\n")
+
+
 if __name__ == "__main__":
     idx = InvertedIndex()
 
