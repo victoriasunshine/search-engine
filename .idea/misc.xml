@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Black">
+    <option name="sdkName" value="Python 3.14 (python3.14 )" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.14 (python3.14 )" project-jdk-type="Python SDK" />
+  <component name="PyCoverageOptionsProvider">
+    <option name="myUseBundledCoveragePy" value="false" />
+    <option name="myBranchCoverage" value="true" />
+  </component>
+</project>
