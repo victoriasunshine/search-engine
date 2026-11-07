@@ -1,0 +1,74 @@
+{
+  "python": "3.12.14",
+  "datasets": [
+    {
+      "dataset": "analyst.zip",
+      "parsed_documents": 1988,
+      "invalid_records": 0,
+      "empty_text_documents": 0,
+      "documents_with_important_text": 1952,
+      "extracted_text_characters": 10744940,
+      "remaining_url_fragments": 0,
+      "elapsed_seconds": 5.48,
+      "samples": [
+        {
+          "url": "http://www-db.ics.uci.edu/pages/links/index.shtml",
+          "text": "Database Research Group @ UCI [ Home | Research | Publications | People | Partners | Demos ] [ Courses | Software | Links | Internal | Search | Joining Our Group ] Interesting Links UCI Homepage UCI ICS Homepage UCI KDD Archive Upcoming Conferences Online Proceedings and Journals Living Around UCI and Orange County Related Research Groups For any problems, questions or suggestions about this page, please contact, Mario Espinoza - ( espinoza@ics.uci.edu ) rev. Feb. 15, 2001",
+          "title_text": "Database Research Group @ UCI",
+          "heading_text": "UCI Homepage UCI ICS Homepage UCI KDD Archive Upcoming Conferences Online Proceedings and Journals Living Around UCI and Orange County Related Research Groups",
+          "bold_text": "",
+          "important_text": "Database Research Group @ UCI UCI Homepage UCI ICS Homepage UCI KDD Archive Upcoming Conferences Online Proceedings and Journals Living Around UCI and Orange County Related Research Groups",
+          "source_path": "ANALYST/www-db_ics_uci_edu/0a4255d630bac864cb2cb7a144f5e3ff046ff1b90e6a570d0086bbbfe91b25f3.json",
+          "encoding": "ascii"
+        },
+        {
+          "url": "http://www-db.ics.uci.edu/pages/research/quasar/index.shtml",
+          "text": "Quality Aware Sensing Architecture (QUASAR) QUality Aware Sensing ARchitecture [ People | Motivation | Talks | Papers | Funding ] People Faculty Sharad Mehrotra Nalini Venkatasubramanian Students Ambarish De Qi Han Iosif Lazaridis Daniel Massaguer Suraj Nagasrinivasa Weiwen (Raymond) Yang Xingbo Yu Xing Zheng Alumni Rajat Mathur Asim Memon Koushik Niyogi Motivation Sensor devices are promising to revolutionize our interaction with the physical world by allowing continuous monitoring and reaction to natural and artificial processes at an unprecedented level of spatial and temporal resolution. As sensors become smaller, cheaper and more configurable, systems incorporating large numbers of them become feasible. Besides the technological aspects of sensor design, a critical factor enabling fut",
+          "title_text": "Quality Aware Sensing Architecture (QUASAR)",
+          "heading_text": "QUality Aware Sensing ARchitecture People Faculty Students Alumni Motivation Talks Papers Project Funding Sensor-Related Information",
+          "bold_text": "\"System Support for Sensor Networks\" \"Quality-Aware Sensor Infrastructure (QUASAR) Project\" \"Quality-Aware Sensor Database (QUASAR) Project\" \"Fault-Tolerant Evaluation of Continuous Selection Queries over Sensor-Generated Data\" \"Approximate Selection Queries over Imprecise Data\" \"QUASAR: Quality-Aware Sensing Architecture\" \"Energy Efficient Data Collection in Distributed Sensor Environments\" \"Adaptive Target Tracking in Sensor Networks\" \"Addressing Timeliness/Accuracy/Cost Tradeoffs in Information Collection for Dynamic Environments\" \"Capturing Uncertainty in Spatial Queries over Imprecise Data\" \"Adaptive Middleware for Distributed Sensor Environments\" \"Capturing Sensor-Generated Time Series with Quality Guarantees\" \"Querying Mobile Objects in Spatio-Temporal Databases\" \"Database Support f",
+          "important_text": "Quality Aware Sensing Architecture (QUASAR) QUality Aware Sensing ARchitecture People Faculty Students Alumni Motivation Talks \"System Support for Sensor Networks\" \"Quality-Aware Sensor Infrastructure (QUASAR) Project\" \"Quality-Aware Sensor Database (QUASAR) Project\" Papers \"Fault-Tolerant Evaluation of Continuous Selection Queries over Sensor-Generated Data\" \"Approximate Selection Queries over Imprecise Data\" \"QUASAR: Quality-Aware Sensing Architecture\" \"Energy Efficient Data Collection in Distributed Sensor Environments\" \"Adaptive Target Tracking in Sensor Networks\" \"Addressing Timeliness/Accuracy/Cost Tradeoffs in Information Collection for Dynamic Environments\" \"Capturing Uncertainty in Spatial Queries over Imprecise Data\" \"Adaptive Middleware for Distributed Sensor Environments\" \"Capt",
+          "source_path": "ANALYST/www-db_ics_uci_edu/16c4d46a219e4961a76bb1e1bc7b5cd2d812c3ec2580baf91f0a4ad89cc0d208.json",
+          "encoding": "ascii"
+        }
+      ]
+    },
+    {
+      "dataset": "developer.zip",
+      "parsed_documents": 55393,
+      "invalid_records": 0,
+      "empty_text_documents": 305,
+      "documents_with_important_text": 47609,
+      "extracted_text_characters": 362819708,
+      "remaining_url_fragments": 0,
+      "elapsed_seconds": 86.81,
+      "samples": [
+        {
+          "url": "https://aiclub.ics.uci.edu/",
+          "text": "Artificial Intelligence @ UCI Shaping the Future of AI Follow Us Toggle navigation Home About Us Events Team Contact We’re AI@UCI. Artificial Intelligence at the University of California, Irvine (AI@UCI) is a nonprofit student-run organization that focuses on promoting and cultivating the discipline of artificial intelligence and machine learning and its applications among the UCI community. Bi-weekly events We hold workshops, meetings for the curious ones to learn the latest technology, espcially AI. Connection From professionals of the academia to almuni from the industry world, we got you guys connected through our unique seminars. Meeting Time PSCB 120 6pm - 7pm Monday Only Some of Our Past Workshops For those who couldn't attend our meeting due to space constraints, don't worry! We ha",
+          "title_text": "Artificial Intelligence @ UCI",
+          "heading_text": "Shaping the Future of AI We’re AI@UCI. Artificial Intelligence at the University of California, Irvine (AI@UCI) is a nonprofit student-run organization that focuses on promoting and cultivating the discipline of artificial intelligence and machine learning and its applications among the UCI community. Bi-weekly events Connection Meeting Time PSCB 120 6pm - 7pm Monday Only Some of Our Past Workshops Our Events Generating Fake Dating Profiles with StyleGAN Spam Classification ICS Day Style Transferring Natural Language Processing Hack the Hackathon Computer Vision and OpenCV Workshop Machine Learning 3 Workshop Machine Learning 2 Workshop Machine Learning 1 Workshop Machine Learning Q&A Session Data Analytics - Patterns of Pallet Town, Pt. 1 Alexander Ihler Our Team Amy Elsayed Jason Kahn Po",
+          "bold_text": "",
+          "important_text": "Artificial Intelligence @ UCI Shaping the Future of AI We’re AI@UCI. Artificial Intelligence at the University of California, Irvine (AI@UCI) is a nonprofit student-run organization that focuses on promoting and cultivating the discipline of artificial intelligence and machine learning and its applications among the UCI community. Bi-weekly events Connection Meeting Time PSCB 120 6pm - 7pm Monday Only Some of Our Past Workshops Our Events Generating Fake Dating Profiles with StyleGAN Spam Classification ICS Day Style Transferring Natural Language Processing Hack the Hackathon Computer Vision and OpenCV Workshop Machine Learning 3 Workshop Machine Learning 2 Workshop Machine Learning 1 Workshop Machine Learning Q&A Session Data Analytics - Patterns of Pallet Town, Pt. 1 Alexander Ihler Our ",
+          "source_path": "DEV/aiclub_ics_uci_edu/8ef6d99d9f9264fc84514cdd2e680d35843785310331e1db4bbd06dd2b8eda9b.json",
+          "encoding": "utf-8"
+        },
+        {
+          "url": "https://aiclub.ics.uci.edu/",
+          "text": "Artificial Intelligence @ UCI Shaping the Future of AI Follow Us Toggle navigation Home About Us Events Team Contact We’re AI@UCI. Artificial Intelligence at the University of California, Irvine (AI@UCI) is a nonprofit student-run organization that focuses on promoting and cultivating the discipline of artificial intelligence and machine learning and its applications among the UCI community. Bi-weekly events We hold workshops, meetings for the curious ones to learn the latest technology, espcially AI. Connection From professionals of the academia to almuni from the industry world, we got you guys connected through our unique seminars. Meeting Time PSCB 120 6pm - 7pm Monday Only Some of Our Past Workshops For those who couldn't attend our meeting due to space constraints, don't worry! We ha",
+          "title_text": "Artificial Intelligence @ UCI",
+          "heading_text": "Shaping the Future of AI We’re AI@UCI. Artificial Intelligence at the University of California, Irvine (AI@UCI) is a nonprofit student-run organization that focuses on promoting and cultivating the discipline of artificial intelligence and machine learning and its applications among the UCI community. Bi-weekly events Connection Meeting Time PSCB 120 6pm - 7pm Monday Only Some of Our Past Workshops Our Events Generating Fake Dating Profiles with StyleGAN Spam Classification ICS Day Style Transferring Natural Language Processing Hack the Hackathon Computer Vision and OpenCV Workshop Machine Learning 3 Workshop Machine Learning 2 Workshop Machine Learning 1 Workshop Machine Learning Q&A Session Data Analytics - Patterns of Pallet Town, Pt. 1 Alexander Ihler Our Team Amy Elsayed Jason Kahn Po",
+          "bold_text": "",
+          "important_text": "Artificial Intelligence @ UCI Shaping the Future of AI We’re AI@UCI. Artificial Intelligence at the University of California, Irvine (AI@UCI) is a nonprofit student-run organization that focuses on promoting and cultivating the discipline of artificial intelligence and machine learning and its applications among the UCI community. Bi-weekly events Connection Meeting Time PSCB 120 6pm - 7pm Monday Only Some of Our Past Workshops Our Events Generating Fake Dating Profiles with StyleGAN Spam Classification ICS Day Style Transferring Natural Language Processing Hack the Hackathon Computer Vision and OpenCV Workshop Machine Learning 3 Workshop Machine Learning 2 Workshop Machine Learning 1 Workshop Machine Learning Q&A Session Data Analytics - Patterns of Pallet Town, Pt. 1 Alexander Ihler Our ",
+          "source_path": "DEV/aiclub_ics_uci_edu/906c24a2203dd5d6cce210c733c48b336ef58293212218808cf8fb88edcecc3b.json",
+          "encoding": "utf-8"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "unit_tests_passed": 13,
+    "lxml_version": "6.1.1",
+    "mode": "strict; full archives; no document filtering or deduplication"
+  }
+}
