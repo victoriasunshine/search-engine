@@ -58,6 +58,29 @@ class IndexReader:
 
         return None
 
+    def get_postings(self,term):
+        "return a words posting as {doc_id: (tf, important_tf)}, or {}"
+
+        # find words card, if not found return empty dict
+        entry = self.find_term(term)
+        if entry is None:
+            return {}
+
+        #unpack 3 numbers
+        doc_freq, offset, length = entry
+
+        #go to words line in postings.txt and read
+        self.postings_file.seek(offset)
+        line=self.postings_file.read(length).decode("utf-8")
+
+        # line appears as word<TAB> 12, 3, 1,
+        word,postings_text = line.rstrip("\n").split("\t", 1)
+
+        postings = {}
+        for posting in postings_text.split(" "):
+            doc_id, tf, imp = posting.split(",")
+            postings[int(doc_id)] = (int(tf), int(imp))
+        return postings
 
 
 
