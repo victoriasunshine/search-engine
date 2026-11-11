@@ -32,3 +32,32 @@ class IndexReader:
         #meta.json holds m1 numbers, grab page count
         with open(os.path.join(index_dir,"meta.json")) as f:
             self.total_docs = json.load(f)["documents"]
+
+    def find_term(self,term):
+        "Find word in the lexicon, returns doc_freq/offset/length or none"
+
+        # find last shortcut word that comes at or before our word
+        i = bisect.bisect_right(self.seek_terms,term) - 1
+        if i < 0:
+            return None
+
+        #jump to where shortcut word line starts in lexicon.tsv
+        self.lexicon_file.seek(self.seek_offsets[i])
+
+        #Flip through at most 64 cards
+        for _ in range(SEEK_EVERY):
+            line = self.lexicon_file.readline()
+            if not line:
+                break #end reached
+
+            word, doc_freq, offset, length = line.decode("utf-8").rstrip("\n").split("\t")
+            if word == term:
+                return int(doc_freq), int(offset), int(length) #found card
+            if word > term:
+                break #passed it
+
+        return None
+
+
+
+
