@@ -1,1 +1,3 @@
-# stems query, looks  up postings
+import bisect
+import json
+import os
