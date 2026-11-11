@@ -2,7 +2,9 @@ import bisect
 import json
 import os
 
-INDEX_DIR = "index/dev"
+# Always find index/dev in the project folder, no matter where the code is run from
+PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+INDEX_DIR = os.path.join(PROJECT_DIR, "index", "dev")
 SEEK_EVERY = 64
 
 class IndexReader:
