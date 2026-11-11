@@ -84,3 +84,26 @@ class IndexReader:
 
 
 
+# This test only runs when you run query.py directly
+if __name__ == "__main__":
+    import time  # used as a stopwatch to time each lookup
+
+    # Create the reader: loads seek.json, docs.tsv, meta.json, and opens the big files
+    reader = IndexReader()
+
+    # Look up some words and time each one
+    # Words are stemmed in the index ("machine" -> "machin", "lopes" -> "lope").
+    # "zzznotaword" checks that a missing word returns 0 pages instead of crashing.
+    for word in ["machin", "learn", "acm", "cristina", "lope", "zzznotaword"]:
+        start = time.perf_counter()                    # start the stopwatch
+        postings = reader.get_postings(word)
+        ms = (time.perf_counter() - start) * 1000      # seconds -> milliseconds
+        print(f"{word}: found on {len(postings)} pages ({ms:.2f} ms)")
+
+    # Check a few results by hand: the first 3 pages that contain "acm",
+    # with how often the word appears and the page's URL
+    print()
+    postings = reader.get_postings("acm")
+    for doc_id in sorted(postings)[:3]:
+        tf, imp = postings[doc_id]
+        print(doc_id, "| tf:", tf, "| important:", imp, "|", reader.doc_urls[doc_id])
