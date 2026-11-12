@@ -1,4 +1,7 @@
 # stems query, looks  up postings
+import bisect
+import json
+import os
 from indexer.tokenizer import tokenize, stem
 
 
@@ -39,10 +42,6 @@ def boolean_and(postings_lists):
 
     return results
 
-
-import bisect
-import json
-import os
 
 # Always find index/dev in the project folder, no matter where the code is run from
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -124,6 +123,22 @@ class IndexReader:
             postings[int(doc_id)] = (int(tf), int(imp))
         return postings
 
+        
+def search(query, reader):
+    terms = query_terms(query)
+    postings_lists = []
+
+    for term in terms:
+        postings = reader.get_postings(term)
+
+        if not postings:
+            return []
+
+        postings_lists.append(postings)
+
+    results = boolean_and(postings_lists)
+
+    return results
 
 
 # This test only runs when you run query.py directly
