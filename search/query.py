@@ -3,6 +3,8 @@ import bisect
 import json
 import os
 from indexer.tokenizer import tokenize, stem
+from search.ranking import rank
+
 
 
 def query_terms(query):
@@ -65,10 +67,13 @@ class IndexReader:
 
         # load the urls
         self.doc_urls = {} # empty dic
+        self.doc_lengths = {} # doc_id -> vector length, for cosine
         with open(os.path.join(index_dir, "docs.tsv"), encoding = "utf-8") as f:
             for line in f: #read line at a time
-                doc_id, url = line.rstrip("\n").split("\t", 1) #remove newline and split first tab into ID/URL
+                doc_id, url, length = line.rstrip("\n").split("\t") #remove newline and split into ID/URL/length
                 self.doc_urls[int(doc_id)] = url
+                self.doc_lengths[int(doc_id)] = float(length)
+        self.average_length = sum(self.doc_lengths.values()) / max(len(self.doc_lengths), 1)
 
         #meta.json holds m1 numbers, grab page count
         with open(os.path.join(index_dir,"meta.json")) as f:
@@ -122,9 +127,13 @@ class IndexReader:
             doc_id, tf, imp = posting.split(",")
             postings[int(doc_id)] = (int(tf), int(imp))
         return postings
-
+    def close(self):
+        "close the two index files left open for seeking"
+        self.lexicon_file.close()
+        self.postings_file.close()
         
-def search(query, reader):
+def search(reader, query, top_k=5):
+    "AND-match the query, rank the matches with tf-idf, return the top_k URLs"
     terms = query_terms(query)
     postings_lists = []
 
@@ -137,8 +146,10 @@ def search(query, reader):
         postings_lists.append(postings)
 
     results = boolean_and(postings_lists)
+    ranked = rank(results, postings_lists, reader.total_docs, 
+                  reader.doc_lengths, reader.average_length, top_k)
 
-    return results
+    return [reader.doc_urls[doc_id] for doc_id in ranked]
 
 
 # This test only runs when you run query.py directly

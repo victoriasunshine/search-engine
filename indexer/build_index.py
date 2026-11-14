@@ -23,9 +23,10 @@ import os
 import shutil
 import time
 
-from document_parser import iter_documents
+from indexer.document_parser import iter_documents
 from indexer.inverted_index import InvertedIndex
 from indexer.tokenizer import count_terms
+from indexer.weighting import doc_length
 
 # Offload the in-memory index after this many postings. On the developer
 # corpus this gives several partial indexes (the spec requires at least 3).
@@ -72,8 +73,8 @@ def build(corpus, out_dir, max_postings=MAX_POSTINGS):
             important_counts = count_terms(doc.important_text)
 
             doc_id = index.add_document(doc.url, term_counts, important_counts)
-            docs_file.write("%d\t%s\n" % (doc_id, doc.url))
-
+            length = doc_length(term_counts, important_counts)
+            docs_file.write("%d\t%s\t%.6f\n" % (doc_id, doc.url, length))
             postings_in_memory += len(term_counts)
             if postings_in_memory >= max_postings:
                 offload()

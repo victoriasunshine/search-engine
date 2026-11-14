@@ -8,7 +8,7 @@ import tempfile
 import unittest
 from zipfile import ZipFile
 
-from document_parser import DocumentError, iter_documents, parse_document
+from indexer.document_parser import DocumentError, iter_documents, parse_document
 
 
 def record(content, url="https://example.org/page?q=1#section"):
